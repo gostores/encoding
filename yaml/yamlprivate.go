@@ -40,49 +40,14 @@ type Marshaler interface {
 	MarshalYAML() (interface{}, error)
 }
 
-// Unmarshal decodes the first document found within the in byte slice
-// and assigns decoded values into the out value.
-//
-// Maps and pointers (to a struct, string, int, etc) are accepted as out
-// values. If an internal pointer within a struct is not initialized,
-// the yaml package will initialize it if necessary for unmarshalling
-// the provided data. The out parameter must not be nil.
-//
-// The type of the decoded values should be compatible with the respective
-// values in out. If one or more values cannot be decoded due to a type
-// mismatches, decoding continues partially until the end of the YAML
-// content, and a *yaml.TypeError is returned with details for all
-// missed values.
-//
-// Struct fields are only unmarshalled if they are exported (have an
-// upper case first letter), and are unmarshalled using the field name
-// lowercased as the default key. Custom keys may be defined via the
-// "yaml" name in the field tag: the content preceding the first comma
-// is used as the key, and the following comma-separated options are
-// used to tweak the marshalling process (see Marshal).
-// Conflicting names result in a runtime error.
-//
-// For example:
-//
-//     type T struct {
-//         F int `yaml:"a,omitempty"`
-//         B int
-//     }
-//     var t T
-//     yaml.Unmarshal([]byte("a: 1\nb: 2"), &t)
-//
-// See the documentation of Marshal for the format of tags and a list of
-// supported tag options.
-//
-func yamlUnmarshal(in []byte, out interface{}) (err error) {
-	return unmarshal(in, out, false)
-}
-
-// UnmarshalStrict is like Unmarshal except that any fields that are found
-// in the data that do not have corresponding struct members will result in
-// an error.
-func UnmarshalStrict(in []byte, out interface{}) (err error) {
-	return unmarshal(in, out, true)
+func marshal(in interface{}) (out []byte, err error) {
+	defer handleErr(&err)
+	e := newEncoder()
+	defer e.destroy()
+	e.marshal("", reflect.ValueOf(in))
+	e.finish()
+	out = e.out
+	return
 }
 
 func unmarshal(in []byte, out interface{}, strict bool) (err error) {
@@ -102,16 +67,6 @@ func unmarshal(in []byte, out interface{}, strict bool) (err error) {
 		return &TypeError{d.terrors}
 	}
 	return nil
-}
-
-func yamlMarshal(in interface{}) (out []byte, err error) {
-	defer handleErr(&err)
-	e := newEncoder()
-	defer e.destroy()
-	e.marshal("", reflect.ValueOf(in))
-	e.finish()
-	out = e.out
-	return
 }
 
 func handleErr(err *error) {

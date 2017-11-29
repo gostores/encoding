@@ -1,3 +1,8 @@
+/*=================================
+* Copyright(c)2015-2016 gostores
+* From: github.com/ghodss/yaml
+*=================================*/
+
 package yaml
 
 import (
@@ -39,22 +44,28 @@ func Unmarshal(y []byte, o interface{}) error {
 	return nil
 }
 
+// UnmarshalStrict is like Unmarshal except that any fields that are found
+// in the data that do not have corresponding struct members will result in
+// an error.
+func UnmarshalStrict(in []byte, out interface{}) (err error) {
+	return unmarshal(in, out, true)
+}
+
 // Convert JSON to YAML
 func JSONToYAML(j []byte) ([]byte, error) {
 	// Convert the JSON to an object.
 	var jsonObj interface{}
-	// We are using yamlUnmarshal here (instead of json.Unmarshal) because the
 	// Go JSON library doesn't try to pick the right number type (int, float,
 	// etc.) when unmarshalling to interface{}, it just picks float64
 	// universally. go-yaml does go through the effort of picking the right
 	// number type, so we can preserve number type throughout this process.
-	err := yamlUnmarshal(j, &jsonObj)
+	err := unmarshal(j, &jsonObj, false)
 	if err != nil {
 		return nil, err
 	}
 
 	// Marshal this object into YAML
-	return yamlMarshal(jsonObj)
+	return marshal(jsonObj)
 }
 
 // Convert YAML to JSON. Since JSON is a subset of YAML, passing JSON through
@@ -74,7 +85,7 @@ func YAMLToJSON(y []byte) ([]byte, error) {
 func yamlToJSON(y []byte, jsonTarget *reflect.Value) ([]byte, error) {
 	// Convert the YAML to an object.
 	var yamlObj interface{}
-	err := yamlUnmarshal(y, &yamlObj)
+	err := unmarshal(y, &yamlObj, false)
 	if err != nil {
 		return nil, err
 	}
