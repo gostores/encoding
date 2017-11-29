@@ -1,4 +1,4 @@
-package asno
+package asn1
 
 func encodeUnsignedInteger(i uint64) []byte {
 	n := uint64Length(i)

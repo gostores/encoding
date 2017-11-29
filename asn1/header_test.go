@@ -1,4 +1,4 @@
-package asno
+package asn1
 
 import (
 	"bytes"
