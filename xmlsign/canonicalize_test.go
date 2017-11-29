@@ -3,8 +3,8 @@ package dsig
 import (
 	"testing"
 
-	"github.com/geego/require"
 	"github.com/gostores/encoding/xmltree"
+	"github.com/gostores/require"
 )
 
 const (
