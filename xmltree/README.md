@@ -1,12 +1,9 @@
-[![Build Status](https://travis-ci.org/beevik/etree.svg?branch=master)](https://travis-ci.org/beevik/etree)
-[![GoDoc](https://godoc.org/github.com/beevik/etree?status.svg)](https://godoc.org/github.com/beevik/etree)
-
-etree
+xmltree
 =====
 
-The etree package is a lightweight, pure go package that expresses XML in
+The xmltree package is a lightweight, pure go package that expresses XML in
 the form of an element tree.  Its design was inspired by the Python
-[ElementTree](http://docs.python.org/2/library/xml.etree.elementtree.html)
+[ElementTree](http://docs.python.org/2/library/xml.xmltree.elementtree.html)
 module. Some of the package's features include:
 
 * Represents XML documents as trees of elements for easy traversal.
@@ -20,10 +17,10 @@ module. Some of the package's features include:
 
 ### Creating an XML document
 
-The following example creates an XML document from scratch using the etree
+The following example creates an XML document from scratch using the xmltree
 package and outputs its indented contents to stdout.
 ```go
-doc := etree.NewDocument()
+doc := xmltree.NewDocument()
 doc.CreateProcInst("xml", `version="1.0" encoding="UTF-8"`)
 doc.CreateProcInst("xml-stylesheet", `type="text/xsl" href="style.xsl"`)
 
@@ -94,9 +91,9 @@ following data:
 </bookstore>
 ```
 
-This code reads the file's contents into an etree document.
+This code reads the file's contents into an xmltree document.
 ```go
-doc := etree.NewDocument()
+doc := xmltree.NewDocument()
 if err := doc.ReadFromFile("bookstore.xml"); err != nil {
     panic(err)
 }
@@ -107,7 +104,7 @@ You can also read XML from a string, a byte slice, or an `io.Reader`.
 ### Processing elements and attributes
 
 This example illustrates several ways to access elements and attributes using
-etree selection queries.
+xmltree selection queries.
 ```go
 root := doc.SelectElement("bookstore")
 fmt.Println("ROOT element:", root.Tag)
@@ -142,7 +139,7 @@ CHILD element: book
 
 ### Path queries
 
-This example uses etree's path functions to select all book titles that fall
+This example uses xmltree's path functions to select all book titles that fall
 into the category of 'WEB'.  The double-slash prefix in the path causes the
 search for book elements to occur recursively; book elements may appear at any
 level of the XML hierarchy.
@@ -176,7 +173,7 @@ price: 30.00
 
 This example finds all books with a price of 49.99 and outputs their titles.
 ```go
-path := etree.MustCompilePath("./bookstore/book[p:price='49.99']/title")
+path := xmltree.MustCompilePath("./bookstore/book[p:price='49.99']/title")
 for _, e := range doc.FindElementsPath(path) {
     fmt.Println(e.Text())
 }
@@ -190,12 +187,6 @@ XQuery Kick Start
 Note that this example uses the FindElementsPath function, which takes as an
 argument a pre-compiled path object. Use precompiled paths when you plan to
 search with the same path more than once.
-
-### Other features
-
-These are just a few examples of the things the etree package can do. See the
-[documentation](http://godoc.org/github.com/beevik/etree) for a complete
-description of its capabilities.
 
 ### Contributing
 
