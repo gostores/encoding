@@ -2,7 +2,8 @@ package query
 
 import (
 	"fmt"
-	"github.com/pelletier/go-toml"
+
+	"github.com/gostores/encoding/toml"
 )
 
 // base match

@@ -3,7 +3,7 @@ package query
 import (
 	"time"
 
-	"github.com/pelletier/go-toml"
+	"github.com/gostores/encoding/toml"
 )
 
 // NodeFilterFn represents a user-defined filter function, for use with

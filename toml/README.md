@@ -25,7 +25,7 @@ Go-toml provides the following features for using data parsed from TOML document
 ## Import
 
 ```go
-import "github.com/pelletier/go-toml"
+import "github.com/gostores/encoding/toml"
 ```
 
 ## Usage example

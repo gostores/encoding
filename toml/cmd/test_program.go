@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/pelletier/go-toml"
+	"github.com/gostores/encoding/toml"
 )
 
 func main() {

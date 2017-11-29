@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/gostores/toml"
+	"github.com/gostores/encoding/toml"
 )
 
 func Example_tree() {

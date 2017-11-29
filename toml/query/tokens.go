@@ -2,9 +2,10 @@ package query
 
 import (
 	"fmt"
-	"github.com/pelletier/go-toml"
 	"strconv"
 	"unicode"
+
+	"github.com/gostores/encoding/toml"
 )
 
 // Define tokens

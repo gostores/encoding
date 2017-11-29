@@ -2,12 +2,13 @@ package query
 
 import (
 	"fmt"
-	"github.com/pelletier/go-toml"
 	"io/ioutil"
 	"sort"
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/gostores/encoding/toml"
 )
 
 type queryTestNode struct {

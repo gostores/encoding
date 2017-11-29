@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
+	"github.com/gostores/spew"
 )
 
 func assertSubTree(t *testing.T, path []string, tree *Tree, err error, ref map[string]interface{}) {

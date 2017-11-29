@@ -1,8 +1,9 @@
 package query
 
 import (
-	"github.com/pelletier/go-toml"
 	"testing"
+
+	"github.com/gostores/encoding/toml"
 )
 
 func testQLFlow(t *testing.T, input string, expectedFlow []token) {
