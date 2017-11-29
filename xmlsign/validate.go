@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/gostores/encoding/xmlsign/etreeutils"
+	"github.com/gostores/encoding/xmlsign/treeutils"
 	"github.com/gostores/encoding/xmlsign/types"
 	"github.com/gostores/encoding/xmltree"
 )
@@ -263,17 +263,17 @@ func (ctx *ValidationContext) findSignature(el *xmltree.Element) (*types.Signatu
 	var sig *types.Signature
 
 	// Traverse the tree looking for a Signature element
-	err := etreeutils.NSFindIterate(el, Namespace, SignatureTag, func(ctx etreeutils.NSContext, el *xmltree.Element) error {
+	err := treeutils.NSFindIterate(el, Namespace, SignatureTag, func(ctx treeutils.NSContext, el *xmltree.Element) error {
 
 		found := false
-		err := etreeutils.NSFindIterateCtx(ctx, el, Namespace, SignedInfoTag,
-			func(ctx etreeutils.NSContext, signedInfo *xmltree.Element) error {
+		err := treeutils.NSFindIterateCtx(ctx, el, Namespace, SignedInfoTag,
+			func(ctx treeutils.NSContext, signedInfo *xmltree.Element) error {
 				// Ignore any SignedInfo that isn't an immediate descendent of Signature.
 				if signedInfo.Parent() != el {
 					return nil
 				}
 
-				detachedSignedInfo, err := etreeutils.NSDetatch(ctx, signedInfo)
+				detachedSignedInfo, err := treeutils.NSDetatch(ctx, signedInfo)
 				if err != nil {
 					return err
 				}
@@ -289,7 +289,7 @@ func (ctx *ValidationContext) findSignature(el *xmltree.Element) (*types.Signatu
 
 				switch AlgorithmID(c14NAlgorithm) {
 				case CanonicalXML10ExclusiveAlgorithmId:
-					err := etreeutils.TransformExcC14n(detachedSignedInfo, "")
+					err := treeutils.TransformExcC14n(detachedSignedInfo, "")
 					if err != nil {
 						return err
 					}
@@ -312,7 +312,7 @@ func (ctx *ValidationContext) findSignature(el *xmltree.Element) (*types.Signatu
 
 				found = true
 
-				return etreeutils.ErrTraversalHalted
+				return treeutils.ErrTraversalHalted
 			})
 		if err != nil {
 			return err
@@ -324,7 +324,7 @@ func (ctx *ValidationContext) findSignature(el *xmltree.Element) (*types.Signatu
 
 		// Unmarshal the signature into a structured Signature type
 		_sig := &types.Signature{}
-		err = etreeutils.NSUnmarshalElement(ctx, el, _sig)
+		err = treeutils.NSUnmarshalElement(ctx, el, _sig)
 		if err != nil {
 			return err
 		}
@@ -334,7 +334,7 @@ func (ctx *ValidationContext) findSignature(el *xmltree.Element) (*types.Signatu
 		for _, ref := range _sig.SignedInfo.References {
 			if ref.URI == "" || ref.URI[1:] == idAttr.Value {
 				sig = _sig
-				return etreeutils.ErrTraversalHalted
+				return treeutils.ErrTraversalHalted
 			}
 		}
 

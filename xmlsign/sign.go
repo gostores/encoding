@@ -10,7 +10,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gostores/encoding/xmlsign/etreeutils"
+	"github.com/gostores/encoding/xmlsign/treeutils"
 	"github.com/gostores/encoding/xmltree"
 )
 
@@ -142,7 +142,7 @@ func (ctx *SigningContext) ConstructSignature(el *xmltree.Element, enveloped boo
 	// a series of cascading NSContexts to capture namespace declarations:
 
 	// First get the context surrounding the element we are signing.
-	rootNSCtx, err := etreeutils.NSBuildParentContext(el)
+	rootNSCtx, err := treeutils.NSBuildParentContext(el)
 	if err != nil {
 		return nil, err
 	}
@@ -161,7 +161,7 @@ func (ctx *SigningContext) ConstructSignature(el *xmltree.Element, enveloped boo
 
 	// Finally detatch the SignedInfo in order to capture all of the namespace
 	// declarations in the scope we've constructed.
-	detatchedSignedInfo, err := etreeutils.NSDetatch(sigNSCtx, signedInfo)
+	detatchedSignedInfo, err := treeutils.NSDetatch(sigNSCtx, signedInfo)
 	if err != nil {
 		return nil, err
 	}

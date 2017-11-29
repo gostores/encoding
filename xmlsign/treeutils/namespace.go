@@ -1,4 +1,4 @@
-package etreeutils
+package treeutils
 
 import (
 	"errors"

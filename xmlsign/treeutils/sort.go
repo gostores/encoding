@@ -1,4 +1,4 @@
-package etreeutils
+package treeutils
 
 import "github.com/gostores/encoding/xmltree"
 

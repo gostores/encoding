@@ -3,7 +3,7 @@ package dsig
 import (
 	"sort"
 
-	"github.com/gostores/encoding/xmlsign/etreeutils"
+	"github.com/gostores/encoding/xmlsign/treeutils"
 	"github.com/gostores/encoding/xmltree"
 )
 
@@ -27,7 +27,7 @@ func MakeC14N10ExclusiveCanonicalizerWithPrefixList(prefixList string) Canonical
 
 // Canonicalize transforms the input Element into a serialized XML document in canonical form.
 func (c *c14N10ExclusiveCanonicalizer) Canonicalize(el *xmltree.Element) ([]byte, error) {
-	err := etreeutils.TransformExcC14n(el, c.prefixList)
+	err := treeutils.TransformExcC14n(el, c.prefixList)
 	if err != nil {
 		return nil, err
 	}
@@ -89,7 +89,7 @@ func canonicalPrep(el *xmltree.Element, seenSoFar map[string]struct{}) *xmltree.
 	}
 
 	ne := el.Copy()
-	sort.Sort(etreeutils.SortedAttrs(ne.Attr))
+	sort.Sort(treeutils.SortedAttrs(ne.Attr))
 	if len(ne.Attr) != 0 {
 		for _, attr := range ne.Attr {
 			if attr.Space != nsSpace {
