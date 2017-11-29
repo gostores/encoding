@@ -6,5 +6,5 @@
   - yaml
 
 ## License
-Base on [go-yaml/yaml](https://github.com/go-yaml/yaml).
-Base on [ghodss/yaml](https://github.com/ghodss/yaml).
+  - Base on [go-yaml/yaml](https://github.com/go-yaml/yaml).
+  - Base on [ghodss/yaml](https://github.com/ghodss/yaml).
