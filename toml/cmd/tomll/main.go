@@ -1,8 +1,3 @@
-// Tomll is a linter for TOML
-//
-// Usage:
-//   cat file.toml | tomll > file_linted.toml
-//   tomll file1.toml file2.toml # lint the two files in place
 package main
 
 import (
@@ -28,7 +23,6 @@ When given a list of files, tomll will modify all files in place without asking.
 `)
 	}
 	flag.Parse()
-	// read from stdin and print to stdout
 	if flag.NArg() == 0 {
 		s, err := lintReader(os.Stdin)
 		if err != nil {
@@ -37,7 +31,6 @@ When given a list of files, tomll will modify all files in place without asking.
 		}
 		io.WriteString(os.Stdout, s)
 	} else {
-		// otherwise modify a list of files
 		for _, filename := range flag.Args() {
 			s, err := lintFile(filename)
 			if err != nil {

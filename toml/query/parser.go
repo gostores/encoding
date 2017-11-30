@@ -1,10 +1,3 @@
-/*
-  Based on the "jsonpath" spec/concept.
-
-  http://goessner.net/articles/JsonPath/
-  https://code.google.com/p/json-path/
-*/
-
 package query
 
 import (

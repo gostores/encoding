@@ -1,5 +1,3 @@
-// code examples for godoc
-
 package toml_test
 
 import (

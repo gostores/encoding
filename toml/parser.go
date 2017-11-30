@@ -1,5 +1,3 @@
-// TOML Parser.
-
 package toml
 
 import (

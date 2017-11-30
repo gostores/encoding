@@ -1,8 +1,3 @@
-// Tomljson reads TOML and converts to JSON.
-//
-// Usage:
-//   cat file.toml | tomljson > file.json
-//   tomljson file1.toml > file.json
 package main
 
 import (
@@ -30,7 +25,6 @@ Reading from a file name:
 }
 
 func processMain(files []string, defaultInput io.Reader, output io.Writer, errorOutput io.Writer) int {
-	// read from stdin and print to stdout
 	inputReader := defaultInput
 
 	if len(files) > 0 {

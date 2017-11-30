@@ -17,8 +17,6 @@ func assertSubTree(t *testing.T, path []string, tree *Tree, err error, ref map[s
 	for k, v := range ref {
 		nextPath := append(path, k)
 		t.Log("asserting path", nextPath)
-		// NOTE: directly access key instead of resolve by path
-		// NOTE: see TestSpecialKV
 		switch node := tree.GetPath([]string{k}).(type) {
 		case []*Tree:
 			t.Log("\tcomparing key", nextPath, "by array iteration")
