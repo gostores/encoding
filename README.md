@@ -2,6 +2,7 @@
   - ASN.1
   - hcl
   - ini
+  - json
   - markdown
   - properties
   - toml
