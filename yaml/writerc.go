@@ -1,7 +1,3 @@
-/*=================================
-* Copyright(c)2015-2016 gostores
-* From: github.com/go-yaml/yaml
-*=================================*/
 package yaml
 
 // Set the writer error and return false.

@@ -1,7 +1,3 @@
-/*=================================
-* Copyright(c)2015-2016 gostores
-* From: github.com/russross/blackfriday
-*=================================*/
 package markdown
 
 import (

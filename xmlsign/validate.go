@@ -1,4 +1,4 @@
-package dsig
+package xmlsign
 
 import (
 	"bytes"

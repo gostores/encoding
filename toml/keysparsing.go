@@ -1,5 +1,3 @@
-// Parsing keys handling both bare and quoted keys.
-
 package toml
 
 import (

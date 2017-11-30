@@ -1,7 +1,3 @@
-/*=================================
-* Copyright(c)2017 gostores
-* From: github.com/go-ini/ini
-*=================================*/
 package ini
 
 import (
