@@ -935,7 +935,6 @@ nested "content" {
 	}
 }
 
-// https://github.com/hashicorp/hcl/issues/60
 func TestDecode_topLevelKeys(t *testing.T) {
 	type Template struct {
 		Source string
