@@ -19,6 +19,10 @@ func LatexRenderer(flags int) Renderer {
 	return &Latex{}
 }
 
+func (options *Latex) GetFlags() int {
+	return 0
+}
+
 // render code chunks using verbatim, or listings if we have a language
 func (options *Latex) BlockCode(out *bytes.Buffer, text []byte, lang string) {
 	if lang == "" {
@@ -36,6 +40,10 @@ func (options *Latex) BlockCode(out *bytes.Buffer, text []byte, lang string) {
 	}
 }
 
+func (options *Latex) TitleBlock(out *bytes.Buffer, text []byte) {
+
+}
+
 func (options *Latex) BlockQuote(out *bytes.Buffer, text []byte) {
 	out.WriteString("\n\\begin{quotation}\n")
 	out.Write(text)
@@ -49,7 +57,7 @@ func (options *Latex) BlockHtml(out *bytes.Buffer, text []byte) {
 	out.WriteString("\n\\end{verbatim}\n")
 }
 
-func (options *Latex) Header(out *bytes.Buffer, text func() bool, level int) {
+func (options *Latex) Header(out *bytes.Buffer, text func() bool, level int, id string) {
 	marker := out.Len()
 
 	switch level {
@@ -132,6 +140,13 @@ func (options *Latex) Table(out *bytes.Buffer, header []byte, body []byte, colum
 func (options *Latex) TableRow(out *bytes.Buffer, text []byte) {
 	if out.Len() > 0 {
 		out.WriteString(" \\\\\n")
+	}
+	out.Write(text)
+}
+
+func (options *Latex) TableHeaderCell(out *bytes.Buffer, text []byte, align int) {
+	if out.Len() > 0 {
+		out.WriteString(" & ")
 	}
 	out.Write(text)
 }
@@ -229,7 +244,7 @@ func (options *Latex) FootnoteRef(out *bytes.Buffer, ref []byte, id int) {
 }
 
 func needsBackslash(c byte) bool {
-	for _, r := range []byte("_{}%$&\\~") {
+	for _, r := range []byte("_{}%$&\\~#") {
 		if c == r {
 			return true
 		}
