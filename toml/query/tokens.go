@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"unicode"
 
-	"github.com/gostores/encoding/toml"
+	"github.com/govenue/encoding/toml"
 )
 
 // Define tokens

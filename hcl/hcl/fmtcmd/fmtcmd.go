@@ -15,7 +15,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/gostores/encoding/hcl/hcl/printer"
+	"github.com/govenue/encoding/hcl/hcl/printer"
 )
 
 var (

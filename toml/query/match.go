@@ -3,7 +3,7 @@ package query
 import (
 	"fmt"
 
-	"github.com/gostores/encoding/toml"
+	"github.com/govenue/encoding/toml"
 )
 
 // base match

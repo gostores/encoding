@@ -10,8 +10,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gostores/encoding/xmlsign/treeutils"
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmlsign/treeutils"
+	"github.com/govenue/encoding/xmltree"
 )
 
 type SigningContext struct {

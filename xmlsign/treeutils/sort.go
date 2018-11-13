@@ -1,6 +1,6 @@
 package treeutils
 
-import "github.com/gostores/encoding/xmltree"
+import "github.com/govenue/encoding/xmltree"
 
 // SortedAttrs provides sorting capabilities, compatible with XML C14N, on top
 // of an []xmltree.Attr

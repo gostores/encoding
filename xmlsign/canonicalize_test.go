@@ -3,8 +3,8 @@ package xmlsign
 import (
 	"testing"
 
-	"github.com/gostores/encoding/xmltree"
-	"github.com/gostores/require"
+	"github.com/govenue/encoding/xmltree"
+	"github.com/govenue/require"
 )
 
 const (

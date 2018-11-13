@@ -3,7 +3,7 @@ package treeutils
 import (
 	"encoding/xml"
 
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmltree"
 )
 
 // NSUnmarshalElement unmarshals the passed xmltree Element into the value pointed to by

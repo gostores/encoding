@@ -28,7 +28,7 @@ Getting Started
 ```go
 import (
 	"flag"
-	"github.com/gostores/encoding/properties"
+	"github.com/govenue/encoding/properties"
 )
 
 func main() {
@@ -82,6 +82,6 @@ Installation and Upgrade
 ------------------------
 
 ```
-$ go get -u github.com/gostores/encoding/properties
+$ go get -u github.com/govenue/encoding/properties
 ```
 

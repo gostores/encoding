@@ -1,6 +1,6 @@
 version: "build-{branch}-{build}"
 image: Visual Studio 2015
-clone_folder: c:\gopath\src\github.com\gostores/encoding\hcl
+clone_folder: c:\gopath\src\github.com\govenue/encoding\hcl
 environment:
   GOPATH: c:\gopath
 init:

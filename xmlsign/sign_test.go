@@ -5,8 +5,8 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/gostores/encoding/xmltree"
-	"github.com/gostores/require"
+	"github.com/govenue/encoding/xmltree"
+	"github.com/govenue/require"
 	"github.com/satori/go.uuid"
 )
 

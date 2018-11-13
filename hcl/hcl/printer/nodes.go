@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/gostores/encoding/hcl/hcl/ast"
-	"github.com/gostores/encoding/hcl/hcl/token"
+	"github.com/govenue/encoding/hcl/hcl/ast"
+	"github.com/govenue/encoding/hcl/hcl/token"
 )
 
 const (

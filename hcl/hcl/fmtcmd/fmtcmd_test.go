@@ -17,7 +17,7 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/gostores/encoding/hcl/testhelper"
+	"github.com/govenue/encoding/hcl/testhelper"
 )
 
 var fixtureExtensions = []string{"hcl"}

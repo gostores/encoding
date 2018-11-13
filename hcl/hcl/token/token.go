@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	hclstrconv "github.com/gostores/encoding/hcl/hcl/strconv"
+	hclstrconv "github.com/govenue/encoding/hcl/hcl/strconv"
 )
 
 // Token defines a single HCL token which can be obtained via the Scanner

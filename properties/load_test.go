@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gostores/encoding/properties/assert"
+	"github.com/govenue/encoding/properties/assert"
 )
 
 func TestLoadFailsWithNotExistingFile(t *testing.T) {

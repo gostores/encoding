@@ -3,7 +3,7 @@ package query
 import (
 	"testing"
 
-	"github.com/gostores/encoding/toml"
+	"github.com/govenue/encoding/toml"
 )
 
 func testQLFlow(t *testing.T, input string, expectedFlow []token) {

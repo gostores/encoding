@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gostores/encoding/properties/assert"
+	"github.com/govenue/encoding/properties/assert"
 )
 
 var verbose = flag.Bool("verbose", false, "Verbose output")

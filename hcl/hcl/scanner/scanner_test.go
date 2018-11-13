@@ -7,7 +7,7 @@ import (
 
 	"strings"
 
-	"github.com/gostores/encoding/hcl/hcl/token"
+	"github.com/govenue/encoding/hcl/hcl/token"
 )
 
 var f100 = strings.Repeat("f", 100)

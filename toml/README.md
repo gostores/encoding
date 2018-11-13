@@ -14,7 +14,7 @@ Toml provides the following features for using data parsed from TOML documents:
 ## Import
 
 ```go
-import "github.com/gostores/encoding/toml"
+import "github.com/govenue/encoding/toml"
 ```
 
 ## Usage example
@@ -73,13 +73,13 @@ for ii, item := range results.Values() {
 * `tomll`: Reads TOML files and lint them.
 
     ```
-    go install github.com/gostores/encoding/toml/cmd/tomll
+    go install github.com/govenue/encoding/toml/cmd/tomll
     tomll --help
     ```
 * `tomljson`: Reads a TOML file and outputs its JSON representation.
 
     ```
-    go install github.com/gostores/encoding/toml/cmd/tomljson
+    go install github.com/govenue/encoding/toml/cmd/tomljson
     tomljson --help
     ```
 

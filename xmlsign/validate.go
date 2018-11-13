@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/gostores/encoding/xmlsign/treeutils"
-	"github.com/gostores/encoding/xmlsign/types"
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmlsign/treeutils"
+	"github.com/govenue/encoding/xmlsign/types"
+	"github.com/govenue/encoding/xmltree"
 )
 
 var uriRegexp = regexp.MustCompile("^#[a-zA-Z_][\\w.-]*$")

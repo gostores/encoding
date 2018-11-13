@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmltree"
 )
 
 // TransformExcC14n transforms the passed element into xml-exc-c14n form.

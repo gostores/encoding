@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmltree"
 )
 
 const (

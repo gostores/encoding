@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/gostores/encoding/toml"
+	"github.com/govenue/encoding/toml"
 )
 
 func main() {

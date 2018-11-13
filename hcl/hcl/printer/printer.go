@@ -6,8 +6,8 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/gostores/encoding/hcl/hcl/ast"
-	"github.com/gostores/encoding/hcl/hcl/parser"
+	"github.com/govenue/encoding/hcl/hcl/ast"
+	"github.com/govenue/encoding/hcl/hcl/parser"
 )
 
 var DefaultConfig = Config{

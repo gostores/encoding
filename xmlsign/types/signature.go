@@ -3,7 +3,7 @@ package types
 import (
 	"encoding/xml"
 
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmltree"
 )
 
 type InclusiveNamespaces struct {

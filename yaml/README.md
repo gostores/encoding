@@ -3,13 +3,13 @@
 To install, run:
 
 ```
-$ go get github.com/gostores/encoding/yaml
+$ go get github.com/govenue/encoding/yaml
 ```
 
 And import using:
 
 ```
-import "github.com/gostores/encoding/yaml"
+import "github.com/govenue/encoding/yaml"
 ```
 
 Usage is very similar to the JSON library:
@@ -20,7 +20,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/encoding/yaml"
+	"github.com/govenue/encoding/yaml"
 )
 
 type Person struct {
@@ -64,7 +64,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gostores/encoding/yaml"
+	"github.com/govenue/encoding/yaml"
 )
 
 func main() {

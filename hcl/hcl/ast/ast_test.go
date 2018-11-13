@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gostores/encoding/hcl/hcl/token"
+	"github.com/govenue/encoding/hcl/hcl/token"
 )
 
 func TestObjectListFilter(t *testing.T) {

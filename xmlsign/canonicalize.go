@@ -3,8 +3,8 @@ package xmlsign
 import (
 	"sort"
 
-	"github.com/gostores/encoding/xmlsign/treeutils"
-	"github.com/gostores/encoding/xmltree"
+	"github.com/govenue/encoding/xmlsign/treeutils"
+	"github.com/govenue/encoding/xmltree"
 )
 
 // Canonicalizer is an implementation of a canonicalization algorithm.

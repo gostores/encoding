@@ -3,7 +3,7 @@ package xmlsign
 import (
 	"time"
 
-	"github.com/gostores/clockwork"
+	"github.com/govenue/clockwork"
 )
 
 // Clock wraps a clockwork.Clock (which could be real or fake) in order

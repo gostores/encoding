@@ -7,7 +7,7 @@ XML Digital Signatures implemented in pure Go.
 Install `xmlsign` into your `$GOPATH` using `go get`:
 
 ```
-$ go get github.com/gostores/encoding/xmlsign
+$ go get github.com/govenue/encoding/xmlsign
 ```
 
 ## Usage
@@ -18,8 +18,8 @@ $ go get github.com/gostores/encoding/xmlsign
 package main
 
 import (
-    "github.com/gostores/encoding/xmlsign"
-    "github.com/gostores/encoding/xmltree"
+    "github.com/govenue/encoding/xmlsign"
+    "github.com/govenue/encoding/xmltree"
 )
 
 func main() {

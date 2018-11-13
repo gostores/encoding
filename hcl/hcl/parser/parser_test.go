@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gostores/encoding/hcl/hcl/ast"
-	"github.com/gostores/encoding/hcl/hcl/token"
+	"github.com/govenue/encoding/hcl/hcl/ast"
+	"github.com/govenue/encoding/hcl/hcl/token"
 )
 
 func TestType(t *testing.T) {

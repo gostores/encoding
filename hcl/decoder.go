@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gostores/encoding/hcl/hcl/ast"
-	"github.com/gostores/encoding/hcl/hcl/parser"
-	"github.com/gostores/encoding/hcl/hcl/token"
+	"github.com/govenue/encoding/hcl/hcl/ast"
+	"github.com/govenue/encoding/hcl/hcl/parser"
+	"github.com/govenue/encoding/hcl/hcl/token"
 )
 
 // This is the tag to use with structures to have settings for HCL

@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gostores/encoding/hcl/hcl/ast"
-	"github.com/gostores/spew"
+	"github.com/govenue/encoding/hcl/hcl/ast"
+	"github.com/govenue/spew"
 )
 
 func TestDecode_interface(t *testing.T) {

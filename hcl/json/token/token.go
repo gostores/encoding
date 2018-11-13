@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	hcltoken "github.com/gostores/encoding/hcl/hcl/token"
+	hcltoken "github.com/govenue/encoding/hcl/hcl/token"
 )
 
 // Token defines a single HCL token which can be obtained via the Scanner

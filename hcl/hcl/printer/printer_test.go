@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/gostores/encoding/hcl/hcl/parser"
+	"github.com/govenue/encoding/hcl/hcl/parser"
 )
 
 var update = flag.Bool("update", false, "update golden files")

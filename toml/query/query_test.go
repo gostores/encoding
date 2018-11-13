@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/gostores/encoding/toml"
+	"github.com/govenue/encoding/toml"
 )
 
 func assertArrayContainsInAnyOrder(t *testing.T, array []interface{}, objects ...interface{}) {
